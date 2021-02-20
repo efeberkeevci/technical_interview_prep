@@ -68,9 +68,11 @@ class Array_Class {
 
 }
 
+/*
 let arr = new Array_Class();
 arr.prepend(1);
 arr.prepend(2);
 arr.prepend(5);
 arr.prepend(3);
 console.log(arr);
+*/
