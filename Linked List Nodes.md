@@ -5,3 +5,6 @@ To refresh my knowledge I watched the following video:
 
 and read through
 * (https://www.eskimo.com/~scs/cclass/int/sx8.html) => Pointer Arithmetic
+
+## Notes
+    * Use -> when accessing a variable through a pointer, use . when you are directly accessing the variable inside the structure
