@@ -1,0 +1,44 @@
+<span>QuickSelect</span> algorithm discussed in class is great when we
+want to find the kth smallest element of an
+unsorted array, but repeatedly calling this algorithm with different
+values of k would be inefficient. We could solve this issue by sorting
+the array, but this is only a good solution if the data does not change
+(i.e. there are no insertions and deletions).
+
+So suppose we have a collection of values that’s *dynamic*: we will be
+inserting new values, and deleting old ones. In CPSC 221, you learned
+that we could store this data in a balanced binary search tree (such as
+an AVL tree) so every insertion and deletion operation takes in
+O(log n) time, where n is the size of the tree. So assume that we
+have a balanced binary search tree containing our data, and that in
+addition to the usual fields each node also contains the size of its
+*left subtree*.
+
+Note that you can think of the `Quicksort` algorithm as implicitly
+constructing a binary search tree: the pivot is the value stored at the
+root of the tree, the array `Lesser` contains the elements of the left
+subtree of the root, and `Greater` contains the elements of the right
+subtree. So the root being aware of the size of its left subtree is like
+`Quicksort` knowing the size of `Lesser`.
+
+Describe an efficient algorithm that takes in such a tree T and a
+positive integer k, and returns the kth
+smallest element of T. What is the worst-case running time of your
+algorithm?
+```
+Algorithm findKthSmallestElement(T,k){
+    if(T.left_subtree_size == k-1){
+        return T;
+    }
+    else{
+        if(T.left_subtree_size < k-1){
+            findKthSmallestElement(T.right, k-T.left_subtree_size);
+        }
+        else{
+            if(T.left_subtree_size > k-1){
+                findKthSmallestElement(T.left,k-T.left_subtree_size);
+            }
+        }
+    }
+}
+```
