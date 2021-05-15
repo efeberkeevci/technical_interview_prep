@@ -1,6 +1,6 @@
 GIT COMMANDS
 
-Add new upstream github repo => git remote set-url origin new.git.url/here
+Add new upstream github repo => git remote add origin <github repo url>
 See upstream repo url => git remote show origin
 
 
