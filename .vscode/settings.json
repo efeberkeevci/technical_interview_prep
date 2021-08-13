@@ -6,6 +6,8 @@
         "vector": "cpp",
         "iosfwd": "cpp",
         "iterator": "cpp",
-        "iostream": "cpp"
-    }
+        "iostream": "cpp",
+        "map": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
